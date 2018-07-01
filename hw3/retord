@@ -1,0 +1,23 @@
+CXXFLAGS+= -fsanitize=address -Wall
+CXX=gcc
+
+all: hw3.o sub.o parser.o
+
+runp: parser.o
+	./parser.o 
+
+run: hw3.o
+	./hw3.o
+
+hw3.o: hw3.c 
+	$(CXX) $^ $(CXXFLAGS) -o hw3.o
+
+sub.o: sub.c 
+	$(CXX) $^ $(CXXFLAGS) -lasan -nostdlib -o sub.o
+	gdb -batch -ex 'file sub.o' -ex 'disassemble /r like_everybody' > "disassemble.ds"
+
+parser.o: parser.c 
+	$(CXX) $^ $(CXXFLAGS) -o parser.o
+
+clean:
+	rm -f *.o

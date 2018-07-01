@@ -1,0 +1,10 @@
+Dump of assembler code for function like_everybody:
+   0x0000000000400390 <+0>:	55	push   %rbp
+   0x0000000000400391 <+1>:	48 89 e5	mov    %rsp,%rbp
+   0x0000000000400394 <+4>:	89 7d fc	mov    %edi,-0x4(%rbp)
+   0x0000000000400397 <+7>:	89 75 f8	mov    %esi,-0x8(%rbp)
+   0x000000000040039a <+10>:	8b 45 fc	mov    -0x4(%rbp),%eax
+   0x000000000040039d <+13>:	33 45 f8	xor    -0x8(%rbp),%eax
+   0x00000000004003a0 <+16>:	5d	pop    %rbp
+   0x00000000004003a1 <+17>:	c3	retq   
+End of assembler dump.
